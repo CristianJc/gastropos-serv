@@ -11,7 +11,7 @@ const formatDate = (date) => {
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://gastropos-liart.vercel.app/", // Reemplaza con la URL de tu frontend
+    origin: "https://gastropos-serv.onrender.com/", // Reemplaza con la URL de tu frontend
     methods: ["GET", "POST", "PUT", "DELETE","PATCH"], // Métodos permitidos
     credentials: false, // Si necesitas enviar cookies o headers personalizados
   })
