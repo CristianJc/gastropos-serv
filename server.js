@@ -13,7 +13,7 @@ app.use(
   cors({
     origin: "https://gastropos-idvdju30g-cristian-e-cumplidos-projects.vercel.app/", // Reemplaza con la URL de tu frontend
     methods: ["GET", "POST", "PUT", "DELETE","PATCH"], // Métodos permitidos
-    credentials: true, // Si necesitas enviar cookies o headers personalizados
+    credentials: false, // Si necesitas enviar cookies o headers personalizados
   })
 );
 // Database initialization
