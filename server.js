@@ -876,6 +876,8 @@ app.get('/detailed-sales', async (req, res) => {
     });
 });
 // Iniciar servidor
-app.listen(3000, () => {
-    console.log('Servidor POS corriendo en http://localhost:3000');
+const PORT = process.env.PORT || 3000; // Usar el puerto proporcionado por Render o el puerto 3000 por defecto
+
+app.listen(PORT, () => {
+  console.log(`Servidor POS corriendo en http://localhost:${PORT}`);
 });
