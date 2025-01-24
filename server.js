@@ -1,12 +1,21 @@
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const app = express();
+const cors = require("cors");
+
 const db = new sqlite3.Database('./restaurant.db');
 const ORDER_STATUSES = ['pending', 'preparing', 'ready', 'delivered', 'cancelled'];
 const formatDate = (date) => {
     return date.toISOString().split('T')[0];
 };
 app.use(express.json());
+app.use(
+  cors({
+    origin: "https://gastropos-idvdju30g-cristian-e-cumplidos-projects.vercel.app/", // Reemplaza con la URL de tu frontend
+    methods: ["GET", "POST", "PUT", "DELETE","PATCH"], // Métodos permitidos
+    credentials: true, // Si necesitas enviar cookies o headers personalizados
+  })
+);
 // Database initialization
 db.serialize(() => {
     // Productos (menú items)
